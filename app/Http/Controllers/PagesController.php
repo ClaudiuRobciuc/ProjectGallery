@@ -9,23 +9,28 @@ class PagesController extends Controller
     //
     public function index()
     {
-        $title = 'Welcome to our Blog Page!';
+        $title = '';
         //return view('pages.index', compact('title'));
-        return view('pages.index')->with('title', $title);
+        return view('pages.index');
     }
 
     public function about()
     {
-        $title = 'About us';
-        return view('pages.about')->with('title', $title);
+        return view('pages.about');
     }
 
     public function services()
     {
-        $data = array(
-            'title' => 'Services',
-            'services' => ['Web Design', 'Programming', 'SEO']
-        ); 
-        return view('pages.services')->with($data);
+        return view('pages.services');
+    }
+
+    public function prices()
+    {
+        return view('pages.prices');
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
     }
 }

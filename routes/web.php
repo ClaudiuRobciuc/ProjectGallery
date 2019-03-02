@@ -19,13 +19,24 @@ Route::get('/', [
     'uses' => 'PagesController@index',
 ]);
 
-Route::get('/prices', [
+Route::get('/priser', [
     'as' => 'frontpage.prices',
-    'uses' => 'PagesController@index',
+    'uses' => 'PagesController@prices',
+]);
+
+Route::get('/om-os', [
+    'as' => 'frontpage.about',
+    'uses' => 'PagesController@about',
+]);
+
+Route::get('/services', [
+    'as' => 'frontpage.services',
+    'uses' => 'PagesController@services',
 ]);
 
 Route::get('/contact', [
     'as' => 'frontpage.contact',
-    'uses' => 'PagesController@index',
+    'uses' => 'PagesController@contact',
 ]);
+
 
