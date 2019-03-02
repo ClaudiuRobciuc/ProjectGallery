@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/', [
+    'as' => 'frontpage.index',
+    'uses' => 'PagesController@index',
+]);
+
+Route::get('/prices', [
+    'as' => 'frontpage.prices',
+    'uses' => 'PagesController@index',
+]);
+
+Route::get('/contact', [
+    'as' => 'frontpage.contact',
+    'uses' => 'PagesController@index',
+]);
+
