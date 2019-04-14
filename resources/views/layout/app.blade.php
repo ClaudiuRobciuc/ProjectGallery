@@ -11,14 +11,13 @@
          <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', 'Laravel') }}</title>
+    </head>
+
+@yield('carousel')
 <body>
-    <div id="app">
+        @include('inc.messages')
         @include('inc.navbar')
-        <div class="container">
-            @include('inc.messages')
-            @yield('content')
-        </div>
-    </div>
+        @yield('content')
 </body>
 <footer>
     @include('inc.footer')

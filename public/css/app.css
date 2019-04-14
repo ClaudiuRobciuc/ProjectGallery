@@ -10655,6 +10655,19 @@ a.text-dark:focus {
   }
 }
 
+#index_section_1 {
+  height: 650px;
+  color: #fff;
+  text-shadow: #000 1px 0 10px;
+}
+
+.index_section_1_img_1 {
+  background-image: url(/assets/index-forside/index_section_1_img_1.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .carousel-item {
   height: 80vh;
   min-height: 350px;
@@ -10668,45 +10681,7 @@ a.text-dark:focus {
 }
 
 .foot-2 {
-  background-color: #292952;
-  color: #fff;
-}
-
-/*https://getbootstrap.com/docs/4.3/layout/overview/*/
-
-/*Medium devices (tablets, 768px and up)*/
-
-/*
-@media (min-width: 768px) {
-  .carousel-item {
-    height: 65vh;
-    min-height: 350px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-}
-*/
-
-.foot-1 {
-  background-color: #515145;
-  color: #cdcdcd;
-}
-
-.foot-2 {
-  background-color: #292952;
-  color: #fff;
-}
-
-.foot-1 {
-  background-color: #515145;
-  color: #cdcdcd;
-}
-
-.foot-2 {
-  background-color: #292952;
+  background-color: #616145;
   color: #fff;
 }
 
