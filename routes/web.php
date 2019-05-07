@@ -14,14 +14,11 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+Auth::routes();
+
 Route::get('/', [
     'as' => 'frontpage.index',
     'uses' => 'PagesController@index',
-]);
-
-Route::get('/priser', [
-    'as' => 'frontpage.prices',
-    'uses' => 'PagesController@prices',
 ]);
 
 Route::get('/om-os', [
@@ -38,5 +35,6 @@ Route::get('/contact', [
     'as' => 'frontpage.contact',
     'uses' => 'PagesController@contact',
 ]);
+
 
 

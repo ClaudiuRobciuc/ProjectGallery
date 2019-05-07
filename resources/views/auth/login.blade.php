@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-<div class="container">
+<div class="container" stlye="padding-top:20%">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

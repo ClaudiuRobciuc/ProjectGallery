@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+
 
 class PagesController extends Controller
 {
     //
     public function index()
     {
-        $title = '';
-        //return view('pages.index', compact('title'));
         return view('pages.index');
     }
 
@@ -24,13 +24,9 @@ class PagesController extends Controller
         return view('pages.services');
     }
 
-    public function prices()
-    {
-        return view('pages.prices');
-    }
-
     public function contact()
     {
         return view('pages.contact');
     }
+
 }

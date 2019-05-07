@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-3">
                 <p>
-                    AuthenCity A/S
+                    OnlineGallery A/S
                 </p>
                 <p>
                     Telefon: +45-12345678
@@ -13,7 +13,7 @@
                     <p>
                         E-mails
                         <br>
-                        - mail@authencity.dk
+                        - mail@ogallery.dk
                         <br>
                         - mail@upthere.dk
                     </p>
@@ -25,24 +25,24 @@
                 Kontakt Support (mail link)
             </div>
             <div class="col-sm-3">
-                Disclaimer,
+                Disclaimer
                 <br>
-                DCMA (regarding pictures, files, etc!),
+                DCMA (regarding pictures, files, etc!)
                 <br>
-                GDPR (cookies and/or sessions!),
+                GDPR (cookies and/or sessions!)
                 <br>
-                FAQ (Frequently Asked Questions / Ofte Stillede Spørgsmål),
+                FAQ (Frequently Asked Questions / Ofte Stillede Spørgsmål)
                 <br>
-                Privacy Information (fotroligheds politik),
+                Privacy Information (fotroligheds politik)
                 <br>
-                Terms of Usage (brug og regler),
+                Terms of Usage (brug og regler)
                 <br>
-                Sitemap,
+                Sitemap
                 <br>
-                etc...
+
             </div>
             <div class="col-sm-3">
-                Jobs,
+                Jobs
                 <br>
                 Karriere
             </div>

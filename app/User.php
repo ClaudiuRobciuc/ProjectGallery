@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'country_id', 'street', 'postal_code', 'city', 'phone_number',
     ];
 
     /**
@@ -27,7 +27,15 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function posts(){
-        return $this->hasMany('App\Post');
+    /**
+     * The function to define relationship with the cart model.
+     *
+     * @access public
+     * @var array
+     */
+    public function cart()
+    {
+        return $this->hasOne('App\CartModel', 'user_id', 'id');
     }
+
 }
