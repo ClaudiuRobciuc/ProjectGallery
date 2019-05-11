@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class PaintingModel extends Model
+class PaintingTypeModel extends Model
 {
     use SoftDeletes;
     //
@@ -15,7 +15,7 @@ class PaintingModel extends Model
      * @access protected
      * @var string
      */
-    protected $table = 'paintings';
+    protected $table = 'painting_types';
 
      /**
      * The attributes that are mass assignable.
@@ -23,5 +23,5 @@ class PaintingModel extends Model
      * @access protected
      * @var array
      */
-    protected $fillable = ['refference_id', 'image', 'author', 'title', 'description', 'price', 'type', 'sold_at'];
+    protected $fillable = ['type'];
 }
