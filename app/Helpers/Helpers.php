@@ -3,40 +3,6 @@
 use App\User;
 
 /**
- * Get the route name and find that if that is matched with the current route.
- *
- * @param  string  $route
- * @param  string  $output
- * @param  boolean $class
- * @return string
- */
-function isActiveRoute($route, $output = " active", $class = false)
-{
-    if (Route::currentRouteName() == $route) {
-        return ($class == false ? $output : " class='" . $output . "'");
-    }
-
-}
-
-/**
- * Get the route name and find that if that is matched with the current route.
- *
- * @param  array  $routes
- * @param  string  $output
- * @param  boolean $class
- * @return string
- */
-function areActiveRoutes(array $routes, $output = " active", $class = false)
-{
-    foreach ($routes as $route) {
-        if (Route::currentRouteName() == $route) {
-            return ($class == false ? $output : ' class=\'' . $output . '\'');
-        }
-
-    }
-}
-
-/**
  * Get the php time and convert that to database date format.
  *
  * @param  int     $unixtime
@@ -70,7 +36,7 @@ function FormatNumber($number, $decimals = 0)
  * @param  number  $amount
  * @return number
  */
-function getWithCurrency($amount, $decimals = 0)
+function getWithCurrency($amount, $decimals = 2)
 {
     return FormatNumber($amount, $decimals) . \Config::get('website.currency');
 }
@@ -99,20 +65,6 @@ function b64url2b64($base64url)
         $base64url .= str_repeat("=", 4 - $padding);
     }
     return strtr($base64url, '-_', '+/');
-}
-
-/**
- * Get the user have the permission to access the route.
- *
- * @return string $bool
- */
-function getPermissionAccess(User $user, $routename)
-{
-    if ($user->inRole('admin') || $user->hasAccess($routename)) {
-        return true;
-    } else {
-        return false;
-    }
 }
 
 /**

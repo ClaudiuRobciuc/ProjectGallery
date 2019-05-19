@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
+
 
 class PaintingTypeModel extends Model
 {
-    use SoftDeletes;
     //
     /**
      * The database table used by the model.
@@ -23,5 +23,16 @@ class PaintingTypeModel extends Model
      * @access protected
      * @var array
      */
-    protected $fillable = ['type'];
+    protected $fillable = ['slug'];
+
+    /**
+     * The function to define relationship with the paintings model.
+     *
+     * @access public
+     * @var array
+     */
+    public function paintings()
+    {
+        return $this->hasMany('App\PaintingModel', 'id', 'type');
+    }
 }

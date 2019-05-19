@@ -15,8 +15,10 @@ class CreatePaintingsTypesTable extends Migration
     {
         Schema::create('painting_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
+            $table->string('slug');
             $table->timestamps();
+
+            $table->engine = 'InnoDB';
         });
     }
 

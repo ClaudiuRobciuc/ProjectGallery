@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-left">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Online Gallery') }}
@@ -9,17 +9,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="{{ route('frontpage.index') }}">Forside <span class="sr-only">(nuværende)</span></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('frontpage.about') }}">Om os</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('frontpage.services') }}">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('frontpage.contact') }}">Kontakt</a>
+                    <a class="nav-link" href="{{ route('frontpage.about') }}">About us</a>
                 </li>
             </ul>
 
@@ -35,11 +26,15 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->username }} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                            @if(Auth::user()->getRole() == 'admin')
+                                <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                            @endif
+                            <a class="dropdown-item" href="{{ route('frontpage.shop.index') }}">View Cart</a>
+                            <a class="dropdown-item" href="{{ route('frontpage.user.edit') }}">User Details</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

@@ -4,19 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use Auth;
+use App\PaintingModel;
 
 class PagesController extends Controller
 {
     //
     public function index()
     {
-        return view('pages.index');
+        $products = PaintingModel::all();
+        return view('pages.index',[
+            'products' => $products,
+        ]);
     }
 
     public function about()
     {
         return view('pages.about');
+    }
+
+    public function shop()
+    {
+        return view('pages.shoppingcart');
     }
 
     public function services()
@@ -28,5 +37,6 @@ class PagesController extends Controller
     {
         return view('pages.contact');
     }
+    
 
 }

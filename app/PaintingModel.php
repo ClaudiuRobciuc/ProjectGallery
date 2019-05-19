@@ -24,4 +24,25 @@ class PaintingModel extends Model
      * @var array
      */
     protected $fillable = ['refference_id', 'image', 'author', 'title', 'description', 'price', 'type', 'sold_at'];
+
+    /**
+     * The function to define relationship with the painting type model.
+     *
+     * @access public
+     * @var array
+     */
+    public function paintingType()
+    {
+        return $this->hasOne('App\PaintingTypeModel', 'id', 'type');
+    }
+
+    public function getType()
+    {
+        return $this->paintingType->slug;
+    }
+
+    public function taxPrice()
+    {
+        return ($this->price + $this->price/4);
+    }
 }

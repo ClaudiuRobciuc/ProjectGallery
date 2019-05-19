@@ -3,20 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TransactionModel extends Model
+class CountryModel extends Model
 {
-    use SoftDeletes;
-    
-    //
     /**
      * The database table used by the model.
      *
      * @access protected
      * @var string
      */
-    protected $table = 'transactions';
+    protected $table = 'countries';
 
      /**
      * The attributes that are mass assignable.
@@ -24,5 +20,6 @@ class TransactionModel extends Model
      * @access protected
      * @var array
      */
-    protected $fillable = ['user_id', 'amount', 'transaction_id'];
+    protected $fillable = ['country_code', 'country_name'];
+
 }

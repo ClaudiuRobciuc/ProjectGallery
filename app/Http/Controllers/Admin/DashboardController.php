@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\User;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -14,7 +16,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('admin');
     }
 
     /**
@@ -24,6 +26,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        if(!Auth::check())
+            return redirect(route('admin.login'));
+        return view('admin.dashboard');
     }
 }

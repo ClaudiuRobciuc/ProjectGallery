@@ -4,16 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CartModel extends Model
+class ShippingStatusModel extends Model
 {
-    //
-    /**
+     /**
      * The database table used by the model.
      *
      * @access protected
      * @var string
      */
-    protected $table = 'cart';
+    protected $table = 'shipping_status';
 
      /**
      * The attributes that are mass assignable.
@@ -21,7 +20,7 @@ class CartModel extends Model
      * @access protected
      * @var array
      */
-    protected $fillable = ['item_id', 'user_id', 'total_price'];
+    protected $fillable = ['status'];
 
     /**
      * The function to define relationship with the paintings model.
@@ -29,8 +28,8 @@ class CartModel extends Model
      * @access public
      * @var array
      */
-    public function cart()
+    public function orders()
     {
-        return $this->hasOne('App\PaintingModel', 'id', 'item_id');
+        return $this->hasMany('App\OrderModel', 'id', 'shipping_status_id');
     }
 }

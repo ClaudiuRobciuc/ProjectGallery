@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Cartalyst\Sentinel\Laravel\Facades\Activation;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Database\Eloquent\Model;
 
 class PaintingsTypesTableSeeder extends Seeder
@@ -15,7 +13,25 @@ class PaintingsTypesTableSeeder extends Seeder
     public function run()
     {
         DB::table('painting_types')->insert([
-            'type' => 'Portrait',
+            'slug' => 'Portrait',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('painting_types')->insert([
+            'slug' => 'Landscape',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('painting_types')->insert([
+            'slug' => 'Nature',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('painting_types')->insert([
+            'slug' => 'Abstract',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

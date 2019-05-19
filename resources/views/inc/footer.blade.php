@@ -1,5 +1,5 @@
 <!--Foots-->
-<footer class="foot-1 py-5">
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -49,7 +49,7 @@
         </div>
     </div>
 </footer>
-<footer class="foot-2 py-2">
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-12">

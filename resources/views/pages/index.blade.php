@@ -1,22 +1,33 @@
 @extends('layout.app')
-@section('carousel')
-    @include('inc.carousel')
-@endsection
+
 @section('content')
-    <!-- Page Content -->
-    <section id="index_section_1" class="index_section_1_img_1 py-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="text-center">
-                        Jeres End-Game, Vores Mål
-                    </h1>
-                    <p class="text-center">
-                        <!--Vores vision for et godt samarbejde mellem kunden og produktet er helt klart at have et clear flow af information og feedback omkring arbejdet og at vi hele tiden underretter kunden omkring eventulle ændringer der kunne forbedre ens hjemmeside.-->
-                        Vores vision for et godt samarbejde mellem kunden og produktet er helt klart at have et clear flow af information og feedback omkring arbejdet.
-                    </p>
+    <div class="container" style="height:800px; overflow:scroll;">
+        <div class="row">
+        @foreach($products as $product)
+        <div class="col-sm-6 col-md-4">
+            <div class="img-thumbnail">
+                <img src="{{ url('storage/paintings/'.$product->image) }}" style="width:27em; height:18em;" class="img-thumbnail" alt="..." class="img-responsive">
+                <div class="caption">
+                    <h3>{!! $product->title !!}</h3>
+                    <p class="description">{!! $product->description !!}</p>
+                    <div class="clearfix">
+                    <div class="pull-left price">{!! getWithCurrency($product->taxPrice()) !!}</div>
+                        {!! Form::open([
+                            'method' => 'POST',
+                            'role' => 'form' ,
+                            'class' => 'form-horizontal form-validate-jquery',
+                            'id' => 'add',
+                            'url' => route('frontpage.product.add', ['id' => $product->id])
+                        ])
+                        !!}
+
+                        {!! Form::submit('Add to Cart', ['class' => 'btn btn-primary', 'id' => 'add']) !!}
+                        {!! Form::close() !!}
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+        @endforeach
+        </div>
+    </div>
 @endsection

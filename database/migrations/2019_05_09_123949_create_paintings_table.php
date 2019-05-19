@@ -22,8 +22,10 @@ class CreatePaintingsTable extends Migration
             $table->text('description');
             $table->double('price', 15,2)->default(0);
             $table->integer('type');
-            $table->date('sold_at')->default(NULL);
+            $table->date('sold_at')->nullable()->default(NULL);
             $table->timestamps();
+
+            $table->engine = 'InnoDB';
         });
     }
 

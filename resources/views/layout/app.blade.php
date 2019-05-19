@@ -10,16 +10,21 @@
         <script type="text/javascript" rel="script" src="{{asset('js/app.js')}}"></script>
          <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <title>{{ config('app.name', 'Laravel') }}</title>
     </head>
 
-@yield('carousel')
 <body>
-        @include('inc.messages')
-        @include('inc.navbar')
+    @include('inc.navbar')
+    @include('inc.messages')
         @yield('content')
+        @yield('scripts')
 </body>
+
 <footer>
+    
     @include('inc.footer')
+  
 </footer>
+
 </html>

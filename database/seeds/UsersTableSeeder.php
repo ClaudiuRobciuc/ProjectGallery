@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Cartalyst\Sentinel\Laravel\Facades\Activation;
-use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,14 +12,13 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        $credentials = [
-            'email'    => 'admin@gallery.com',
-            'password' => 'admin',
+    {   
+        User::create([
             'username' => 'Administrator',
-        ];
-        $user = Sentinel::registerAndActivate($credentials);
-        $role = Sentinel::findRoleByName('Administrator');
-        $role->users()->attach($user);
+            'email' => 'admin@gallery.com',
+            'password' => Hash::make('admin'),
+            'role_id' => 1
+        ]);
+
     }
 }
