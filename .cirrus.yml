@@ -1,0 +1,5 @@
+container:
+  image: digitalocean.com/php
+
+check_task:
+  test_script: vendor/bin/phpunit
