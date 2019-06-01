@@ -21,6 +21,7 @@ $factory->define(App\PaintingModel::class, function (Faker $faker) {
         'title' => $this->faker->word,
         'description' => $this->faker->text,
         'type' => 1,
+        'image' => $this->faker->url,
         'price' => $this->faker->numberBetween(100,2000),
     ];
 });
