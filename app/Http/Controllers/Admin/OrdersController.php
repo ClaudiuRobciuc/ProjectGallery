@@ -32,7 +32,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = OrderModel::all();
+        $orders = OrderModel::orderBy('created_at', 'desc')->get();
         $orderStatus = OrderStatusModel::all()->pluck('status', 'id');
         $shippingStatus = ShippingStatusModel::all()->pluck('status', 'id');
 

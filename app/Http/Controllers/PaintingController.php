@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
 use Cart;
+use Session;
 use DB;
+use Carbon;
 
 class PaintingController extends Controller
 {
@@ -62,9 +64,13 @@ class PaintingController extends Controller
 
         foreach(Cart::content() as $product)
         {
+            $painting = PaintingModel::where('refference_id', $product->id)->first();
+            $painting->sold_at = Carbon\Carbon::now();
+            $painting->save();
             Cart::remove($product->rowId);
         }
 
+        Session::flash('success', 'Payment sucessfully made!');
         return redirect()->intended('/');
     }
 }

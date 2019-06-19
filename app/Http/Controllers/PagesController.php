@@ -12,7 +12,7 @@ class PagesController extends Controller
     //
     public function index()
     {
-        $products = PaintingModel::all();
+        $products = PaintingModel::whereNull('sold_at')->get();
         return view('pages.index',[
             'products' => $products,
         ]);

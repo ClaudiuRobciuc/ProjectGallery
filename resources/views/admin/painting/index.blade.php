@@ -60,6 +60,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{$paintings->links()}}
                     <div class="clearfix"></div>
                     @endif
                 </div>

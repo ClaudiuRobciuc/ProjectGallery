@@ -32,7 +32,7 @@ class PaintingController extends Controller
      */
     public function index()
     {
-        $paintings = PaintingModel::orderBy('created_at', 'desc')->paginate(15);
+        $paintings = PaintingModel::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.painting.index', [
             'paintings' => $paintings,
         ]);
@@ -145,7 +145,6 @@ class PaintingController extends Controller
             //Upload Image
 
             $path = $request->file('image')->storeAs('public/paintings', $fileNameToStore);
-            dump($path);
         }
         else
         {

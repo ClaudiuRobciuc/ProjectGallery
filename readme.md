@@ -30,7 +30,7 @@ Furthermore, you need to have the following file:
 ### Running
 
 Once the containers are up and running, you can test it out by accessing http://localhost.
-In order to run the automated tests type `.vendor/bin/phpunit` (this will run the unit tests) and afterwards `php artisan dusk` (this will run the functionality tests)
+In order to run the automated tests type `./vendor/bin/phpunit` (this will run the unit tests and you will have to run it inside the container) and afterwards `php artisan dusk` (this will run the functionality tests)
 
 
 
